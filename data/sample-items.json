@@ -1,0 +1,153 @@
+{
+  "items": [
+    {
+      "id": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "name": "Home",
+      "path": "/sitecore/content/Home",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "0de95ae4-41ab-4d01-9eb0-67441b7c2450",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Welcome to TaskFlow",
+        "Content": "<p>Your productivity journey starts here.</p>",
+        "MetaDescription": "TaskFlow - Modern project management for teams"
+      }
+    },
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "About",
+      "path": "/sitecore/content/Home/About",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "About Us",
+        "Content": "<p>We are a team dedicated to simplifying project management.</p>",
+        "HeroImage": "~/media/images/about-hero.jpg"
+      }
+    },
+    {
+      "id": "b2c3d4e5-f678-90ab-cdef-123456789012",
+      "name": "Features",
+      "path": "/sitecore/content/Home/Features",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Features",
+        "Content": "<p>Discover what makes TaskFlow unique.</p>",
+        "DataSource": "{c3d4e5f6-7890-abcd-ef12-345678901234}"
+      }
+    },
+    {
+      "id": "c3d4e5f6-7890-abcd-ef12-345678901234",
+      "name": "Feature List",
+      "path": "/sitecore/content/Components/FeatureList",
+      "templateId": "89012345-6789-0abc-def1-234567890123",
+      "templateName": "FeatureListComponent",
+      "parentId": "d4e5f678-90ab-cdef-1234-567890123456",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Heading": "Why Choose TaskFlow?",
+        "Features": "Real-time collaboration|Smart notifications|Integrations"
+      }
+    },
+    {
+      "id": "orphan-item-0000-0000-000000000001",
+      "name": "OrphanedPage",
+      "path": "/sitecore/content/Home/Orphaned/Page",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "missing-parent-0000-0000-000000000000",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "",
+        "Content": "<p>This page has a missing parent.</p>"
+      }
+    },
+    {
+      "id": "circular-ref-a-0000-0000-000000000001",
+      "name": "CircularA",
+      "path": "/sitecore/content/Home/CircularA",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Circular Reference A",
+        "RelatedPage": "{circular-ref-b-0000-0000-000000000002}"
+      }
+    },
+    {
+      "id": "circular-ref-b-0000-0000-000000000002",
+      "name": "CircularB",
+      "path": "/sitecore/content/Home/CircularB",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Circular Reference B",
+        "RelatedPage": "{circular-ref-a-0000-0000-000000000001}"
+      }
+    },
+    {
+      "id": "broken-media-0000-0000-000000000001",
+      "name": "BrokenMediaPage",
+      "path": "/sitecore/content/Home/BrokenMedia",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Page with Broken Media",
+        "Content": "<p>Image: <img src=\"~/media/nonexistent-image-12345.jpg\" /></p>",
+        "HeroImage": "~/media/does-not-exist-67890.png"
+      }
+    },
+    {
+      "id": "script-injection-0000-0000-000000000001",
+      "name": "ScriptPage",
+      "path": "/sitecore/content/Home/ScriptPage",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Page with Script",
+        "Content": "<p>Hello</p><script>alert('xss')</script><p>World</p>"
+      }
+    },
+    {
+      "id": "encoding-issue-0000-0000-000000000001",
+      "name": "EncodingPage",
+      "path": "/sitecore/content/Home/EncodingPage",
+      "templateId": "76036f5e-cbce-46d1-af0a-4143f9b557aa",
+      "templateName": "Page",
+      "parentId": "110d559f-dea5-42ea-9c1c-8a5df7e70ef9",
+      "language": "en",
+      "version": 1,
+      "fields": {
+        "Title": "Encoding Test",
+        "Content": "<p>Special chars: café, naïve, 日本語, emojis 🎉</p>"
+      }
+    }
+  ],
+  "metadata": {
+    "source": "Synthetic data generated for testing",
+    "generatedAt": "2024-01-15T10:00:00Z",
+    "description": "Sample Sitecore items including edge cases: orphaned items, circular references, broken media, script tags, encoding issues"
+  }
+}

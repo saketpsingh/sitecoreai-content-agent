@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "sitecore-xmcloud-transfer": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp/server.ts"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PORTKEY_GATEWAY_URL": "${env:PORTKEY_GATEWAY_URL}",
+        "PORTKEY_API_KEY": "${env:PORTKEY_API_KEY}",
+        "PORTKEY_PROVIDER": "${env:PORTKEY_PROVIDER}",
+        "SITECORE_DEV_URL": "${env:SITECORE_DEV_URL}",
+        "SITECORE_DEV_CLIENT_ID": "${env:SITECORE_DEV_CLIENT_ID}",
+        "SITECORE_DEV_CLIENT_SECRET": "${env:SITECORE_DEV_CLIENT_SECRET}",
+        "SITECORE_QA_URL": "${env:SITECORE_QA_URL}",
+        "SITECORE_QA_CLIENT_ID": "${env:SITECORE_QA_CLIENT_ID}",
+        "SITECORE_QA_CLIENT_SECRET": "${env:SITECORE_QA_CLIENT_SECRET}",
+        "SITECORE_PROD_URL": "${env:SITECORE_PROD_URL}",
+        "SITECORE_PROD_CLIENT_ID": "${env:SITECORE_PROD_CLIENT_ID}",
+        "SITECORE_PROD_CLIENT_SECRET": "${env:SITECORE_PROD_CLIENT_SECRET}"
+      }
+    }
+  }
+}

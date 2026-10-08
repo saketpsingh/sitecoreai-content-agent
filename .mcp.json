@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "sitecore-xmcloud-transfer": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "tsx",
+        "src/mcp/server.ts"
+      ],
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
+    }
+  }
+}

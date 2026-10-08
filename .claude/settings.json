@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sitecore-xmcloud-transfer": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp/server.ts"],
+      "cwd": "C:\\Projects\\sitecoreai-content-agent",
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
+    }
+  }
+}

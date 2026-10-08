@@ -1,0 +1,76 @@
+{
+  "scenarios": [
+    {
+      "id": "timeout_export",
+      "name": "Export Timeout",
+      "description": "Simulates a timeout when exporting a large batch of items",
+      "trigger": {
+        "itemCount": 100,
+        "simulatedError": "timeout"
+      },
+      "expectedBehavior": "Agent should reduce batch size and retry",
+      "expectedRecovery": "Split into smaller batches of 25 items"
+    },
+    {
+      "id": "auth_failure",
+      "name": "Authentication Failure",
+      "description": "Simulates expired or invalid credentials",
+      "trigger": {
+        "environment": "staging",
+        "simulatedError": "401 Unauthorized"
+      },
+      "expectedBehavior": "Agent should escalate with auth error context",
+      "expectedRecovery": "Escalate to human with credential refresh instructions"
+    },
+    {
+      "id": "validation_schema_mismatch",
+      "name": "Schema Mismatch",
+      "description": "Pricing tool returns string instead of float",
+      "trigger": {
+        "field": "price",
+        "actualType": "string",
+        "expectedType": "number"
+      },
+      "expectedBehavior": "Validation should reject, retry should include schema mismatch details",
+      "expectedRecovery": "Second attempt with type coercion succeeds"
+    },
+    {
+      "id": "partial_import_failure",
+      "name": "Partial Import Failure",
+      "description": "Import succeeds for some items but fails for others",
+      "trigger": {
+        "successCount": 7,
+        "failureCount": 3,
+        "failureReason": "Item already exists with different template"
+      },
+      "expectedBehavior": "Report partial success with specific failed items",
+      "expectedRecovery": "Offer to retry failed items with overwrite mode"
+    },
+    {
+      "id": "circular_dependency",
+      "name": "Circular Dependency Detection",
+      "description": "Items reference each other creating a cycle",
+      "trigger": {
+        "itemA": "circular-ref-a-0000-0000-000000000001",
+        "itemB": "circular-ref-b-0000-0000-000000000002"
+      },
+      "expectedBehavior": "Detect cycle during analysis, warn but allow transfer",
+      "expectedRecovery": "Transfer in dependency order with cycle broken at arbitrary point"
+    },
+    {
+      "id": "missing_parent",
+      "name": "Missing Parent Item",
+      "description": "Child item references a parent not in the transfer set",
+      "trigger": {
+        "itemId": "orphan-item-0000-0000-000000000001",
+        "missingParent": "missing-parent-0000-0000-000000000000"
+      },
+      "expectedBehavior": "Validation error, block transfer without parent",
+      "expectedRecovery": "Suggest including parent or transferring to existing location"
+    }
+  ],
+  "metadata": {
+    "purpose": "Deliberate failure injection scenarios for testing agent recovery",
+    "usage": "Pass scenario ID to demo script to trigger specific failure mode"
+  }
+}
