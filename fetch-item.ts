@@ -55,7 +55,7 @@ async function getItem(itemPath: string) {
 }
 
 async function main() {
-  const itemPath = '/sitecore/content/HAP/HAP/Home/Plan Detail Page';
+  const itemPath = '/sitecore/content/Demosite/Demosite/Home/Plan Detail Page';
 
   console.log(`Fetching item: ${itemPath}`);
   console.log(`From: ${devConfig.url}\n`);

@@ -230,7 +230,9 @@ The cloud-to-cloud transfer follows a 5-step process:
 
 ## 🔌 MCP Server
 
-Integrate with Claude Desktop or IDE for AI-assisted transfers.
+Integrate with Claude CLI, Claude Desktop, or VS Code for AI-assisted transfers.
+
+> 📘 **[Full MCP Usage Guide](MCP_USAGE.md)** — Detailed documentation for Claude CLI, Claude Desktop, and VS Code setup with examples and troubleshooting.
 
 ### Available Tools
 
@@ -244,18 +246,32 @@ Integrate with Claude Desktop or IDE for AI-assisted transfers.
 | `transfer_verify` | Verify success |
 | `transfer_cleanup` | Clean up artifacts |
 
-### Claude Desktop Config
+### Quick Setup (Claude CLI)
 
 ```json
+// .claude/settings.json
 {
   "mcpServers": {
-    "sitecore-transfer": {
+    "sitecore-xmcloud-transfer": {
       "command": "npx",
-      "args": ["tsx", "path/to/src/mcp/server.ts"]
+      "args": ["tsx", "src/mcp/server.ts"],
+      "cwd": "<your local project path>\\sitecoreai-content-agent",
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
     }
   }
 }
+
 ```
+
+Then run `claude` from the project directory and start transferring:
+
+```
+> transfer /sitecore/content/Demo/Demo/Home/Medicare from dev to qa
+```
+
+See **[MCP_USAGE.md](MCP_USAGE.md)** for Claude Desktop, VS Code config, and detailed examples.
 
 ---
 

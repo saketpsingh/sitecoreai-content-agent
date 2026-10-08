@@ -174,8 +174,8 @@ export default function Home() {
         if (data.updated > 0) addLocalLog(`   Updated: ${data.updated} existing items`);
         addLocalLog('');
         addLocalLog('Note: IDs may differ from source. For ID preservation, use Sitecore CLI:');
-        addLocalLog('  dotnet sitecore ser pull -n prod -i HAPSite');
-        addLocalLog('  dotnet sitecore ser push -n default -i HAPSite');
+        addLocalLog('  dotnet sitecore ser pull -n prod -i Demosite');
+        addLocalLog('  dotnet sitecore ser push -n default -i Demosite');
       } else {
         setLocalSyncStatus('failed');
         setLocalSyncResult({ transferred: data.transferred || 0, failed: data.failed || 1 });
@@ -1025,8 +1025,8 @@ export default function Home() {
                   <strong>Note:</strong> This sync copies content but does NOT preserve item IDs.
                   For ID preservation (serialization compatibility), use Sitecore CLI:
                   <code style={{ display: 'block', marginTop: '0.5rem', fontSize: '0.75rem', background: 'rgba(0,0,0,0.05)', padding: '0.5rem', borderRadius: '4px', whiteSpace: 'pre-wrap' }}>
-                    dotnet sitecore ser pull -n prod -i HAPSite{'\n'}
-                    dotnet sitecore ser push -n default -i HAPSite
+                    dotnet sitecore ser pull -n prod -i Demosite{'\n'}
+                    dotnet sitecore ser push -n default -i Demosite
                   </code>
                 </div>
 

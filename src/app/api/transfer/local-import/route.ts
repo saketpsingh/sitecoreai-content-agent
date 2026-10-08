@@ -59,8 +59,8 @@ export async function POST(request: Request) {
       log('');
       log('NOTE: Item IDs do NOT match source environment.');
       log('For ID preservation, use Sitecore CLI:');
-      log('  dotnet sitecore ser pull -n prod -i HAPSite');
-      log('  dotnet sitecore ser push -n default -i HAPSite');
+      log('  dotnet sitecore ser pull -n prod -i Demosite');
+      log('  dotnet sitecore ser push -n default -i Demosite');
     }
 
     return NextResponse.json({
